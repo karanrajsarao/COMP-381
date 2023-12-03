@@ -18,10 +18,6 @@ print(data.head(), "\n")
 
 # ----------- ? (Done by Karanraj) ------------
 
-
-# ----------- LDA (Done by Bhavitavya) ------------
-
-
 # ----------- KNN (Done by Theo) ------------
 print("\n--------------KNN---------------")
 X = data[['rt_audience_score',  'rt_score', 'imdb_rating', 'rank_in_year']]
