@@ -76,6 +76,7 @@ X_interact = X_add.copy()
 X_interact['interaction_term'] = X_add['imdb_rating'] * X_add['rt_score']
 X_train_interact, X_test_interact, _, _ = train_test_split(X_interact, Y_movie, test_size=0.5, random_state=123)
 
+# Creating a linear regression model which is the Interaction Terms Model
 linmod_interact = LinearRegression()
 linmod_interact.fit(X_train_interact, Y_train)
 
