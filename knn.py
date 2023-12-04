@@ -16,8 +16,6 @@ data = pd.read_csv(Location)
 #display first 5 rows
 print(data.head(), "\n")
 
-# ----------- ? (Done by Karanraj) ------------
-
 # ----------- KNN (Done by Theo) ------------
 print("\n--------------KNN---------------")
 X = data[['rt_audience_score',  'rt_score', 'imdb_rating', 'rank_in_year']]
