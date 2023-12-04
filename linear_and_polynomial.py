@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 
 # File path
-file_path = r"/Users/karanrajsarao/Desktop/Anaconda/anaconda3/movies.csv"
+file_path = "movies.csv"
 df = pd.read_csv(file_path)
 
 # Defining predictors and target variable
