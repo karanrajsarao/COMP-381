@@ -6,12 +6,10 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 
-plt.style.use('default')
-#load data
-Location = 'movies.csv'
-df = pd.read_csv(Location)
-#display first 5 rows
-print(df.head(), "\n")
+# File path
+file_path = r"/Users/karanrajsarao/Desktop/Anaconda/anaconda3/movies.csv"
+df = pd.read_csv(file_path)
+
 # Defining predictors and target variable
 X_movie = df[['imdb_rating', 'rt_score', 'audience_freshness', 'rt_audience_score', 'length', 'rank_in_year', 'rating']]
 Y_movie = df['revenue']
@@ -76,7 +74,6 @@ X_interact = X_add.copy()
 X_interact['interaction_term'] = X_add['imdb_rating'] * X_add['rt_score']
 X_train_interact, X_test_interact, _, _ = train_test_split(X_interact, Y_movie, test_size=0.5, random_state=123)
 
-# Creating a linear regression model which is the Interaction Terms Model
 linmod_interact = LinearRegression()
 linmod_interact.fit(X_train_interact, Y_train)
 
@@ -104,7 +101,7 @@ X_train_poly, X_test_poly, _, _ = train_test_split(polyx, Y_movie, test_size=0.5
 linmod_poly = LinearRegression()
 linmod_poly.fit(X_train_poly, Y_train)
 
-preds_poly = linmod_poly.predict(poly_degree.transform(X_test_add[['length']]))
+preds_poly = linmod_poly.predict(X_test_poly)
 
 # Displaying scatterplot for the Polynomial Terms Model
 plt.scatter(Y_test, preds_poly, color='g')
@@ -117,5 +114,10 @@ plt.show()
 r2_poly = r2_score(Y_test, preds_poly)
 mse_poly = mean_squared_error(Y_test, preds_poly)
 print(f"Polynomial Terms Model's R-squared value is: {r2_poly}, MSE value is: {mse_poly}")
+
+
+
+
+
 
 
