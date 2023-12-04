@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import precision_recall_fscore_support, roc_auc_score, confusion_matrix, accuracy_score
+from sklearn.metrics import confusion_matrix, accuracy_score
 
 plt.style.use('default')
 
